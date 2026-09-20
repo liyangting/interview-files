@@ -15,7 +15,7 @@ export default defineConfig({
   lang: 'zh-CN',
   title: 'share-files',
   description: '前端面试与开发学习笔记：Vue、React、TypeScript、CSS 和业务场景。',
-  base: '/share-filess/',
+  base: '/share-files/',
   rewrites: { 'README.md': 'index.md' },
   srcExclude: ['DEPLOYMENT.md'],
   head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/share-files/favicon.svg' }]],
