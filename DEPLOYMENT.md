@@ -5,10 +5,10 @@
 ## 首次上线
 
 1. 将 package.json、package-lock.json、.gitignore、.vitepress/config.mts、public/favicon.svg 和 .github/workflows/deploy.yml 提交并推送到 main 分支。
-2. 打开 https://github.com/liyangting/interview-files/settings/pages 。
+2. 打开 https://github.com/liyangting/share-file/settings/pages 。
 3. 在 Build and deployment → Source 中选择 **GitHub Actions**。
 4. 打开仓库 Actions，选择 Deploy documentation to GitHub Pages；如果首次运行失败，在启用 Pages 后点击 Run workflow 重新运行。
-5. 工作流成功后访问 https://liyangting.github.io/interview-files/ 。
+5. 工作流成功后访问 https://liyangting.github.io/share-file/ 。
 
 公开仓库使用 GitHub Pages 和默认域名无需购买服务器或域名。
 
@@ -34,5 +34,5 @@ npm run docs:preview
 - 左侧目录在构建时自动读取仓库根目录的 Markdown 文件，以文件名（去掉 .md）显示并排序。README 是首页，DEPLOYMENT.md 不纳入目录。
 - 新增、删除或重命名根目录文章后，推送到 main 即可自动更新目录，无需手工配置 sidebar。本地开发时新增或删除文件后需重启 docs:dev。
 - 当前只扫描根目录，不扫描子文件夹；首页 README 中的内容导航表格仍由手工维护。
-- 本站路径为 /interview-files/；改仓库名或绑定独立域名时，需要同步修改 base 和 favicon 的路径。
+- 本站路径为 /share-file/；改仓库名或绑定独立域名时，需要同步修改 base 和 favicon 的路径。
 - DEPLOYMENT.md 不会生成为网站文章。
