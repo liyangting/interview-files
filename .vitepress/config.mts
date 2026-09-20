@@ -13,21 +13,28 @@ const articles = readdirSync(root, { withFileTypes: true })
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'share-file',
+  title: 'share-files',
   description: '前端面试与开发学习笔记：Vue、React、TypeScript、CSS 和业务场景。',
-  base: '/share-file/',
+  base: '/share-filess/',
   rewrites: { 'README.md': 'index.md' },
   srcExclude: ['DEPLOYMENT.md'],
-  head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/share-file/favicon.svg' }]],
+  head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/share-files/favicon.svg' }]],
   themeConfig: {
     nav: [
-      // { text: '学习笔记', link: '/' },
-      // { text: '面试实战', link: '/腾讯面试' }
-    ],
+  { text: '面试', link: '/' },
+  {
+    text: 'demo示例',
+    link: 'https://github.com/liyangting/vue-examples'
+  },
+  {
+    text: 'file',
+    link: 'https://github.com/liyangting/你的file仓库名'
+  }
+],
     sidebar: [
       { text: '文章目录', items: articles }
     ],
-    socialLinks: [{ icon: 'github', link: 'https://github.com/liyangting/share-file' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/liyangting/share-files' }],
     outline: { level: [2, 3], label: '本页目录' },
     docFooter: { prev: '上一篇', next: '下一篇' },
     sidebarMenuLabel: '文章目录',
