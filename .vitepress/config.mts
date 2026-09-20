@@ -28,7 +28,7 @@ export default defineConfig({
     target: '_self'
   },
   {
-    text: 'file',
+    text: 'file1',
     link: 'https://github.com/liyangting/你的file仓库名'
   }
 ],
