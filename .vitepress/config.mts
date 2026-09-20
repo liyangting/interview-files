@@ -24,7 +24,8 @@ export default defineConfig({
   { text: '面试', link: '/' },
   {
     text: 'demo示例',
-    link: 'https://github.com/liyangting/vue-examples'
+    link: 'https://liyangting.github.io/vue-examples/',
+    target: '_self'
   },
   {
     text: 'file',
