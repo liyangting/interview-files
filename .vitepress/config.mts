@@ -25,11 +25,12 @@ export default defineConfig({
   {
     text: 'demo示例',
     link: 'https://liyangting.github.io/vue-examples/',
-    target: '_self'
+    target: '_blank'
   },
   {
-    text: 'file1',
-    link: 'https://github.com/liyangting/你的file仓库名'
+    text: 'file',
+    link: 'https://github.com/liyangting/你的file仓库名',
+    target: '_blank'
   }
 ],
     sidebar: [
