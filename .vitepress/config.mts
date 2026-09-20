@@ -18,7 +18,7 @@ export default defineConfig({
   base: '/share-files/',
   rewrites: { 'README.md': 'index.md' },
   srcExclude: ['DEPLOYMENT.md'],
-  head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/share-files/favicon.svg' }]],
+  head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/share-files/favicon.ico' }]],
   themeConfig: {
     nav: [
   { text: '面试', link: '/' },
