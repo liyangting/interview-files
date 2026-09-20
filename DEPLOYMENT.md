@@ -31,6 +31,8 @@ npm run docs:preview
 ## 后续维护
 
 - 编辑现有 Markdown 后推送到 main，网站会自动更新。
-- 添加文章后，在 .vitepress/config.mts 的 sidebar 中增加对应链接。
+- 左侧目录在构建时自动读取仓库根目录的 Markdown 文件，以文件名（去掉 .md）显示并排序。README 是首页，DEPLOYMENT.md 不纳入目录。
+- 新增、删除或重命名根目录文章后，推送到 main 即可自动更新目录，无需手工配置 sidebar。本地开发时新增或删除文件后需重启 docs:dev。
+- 当前只扫描根目录，不扫描子文件夹；首页 README 中的内容导航表格仍由手工维护。
 - 本站路径为 /interview-files/；改仓库名或绑定独立域名时，需要同步修改 base 和 favicon 的路径。
 - DEPLOYMENT.md 不会生成为网站文章。

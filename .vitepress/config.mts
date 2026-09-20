@@ -1,4 +1,15 @@
 import { defineConfig } from 'vitepress'
+import { readdirSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
+
+// Scan article files at build/startup time; README remains the home page.
+const root = fileURLToPath(new URL('../', import.meta.url))
+const articles = readdirSync(root, { withFileTypes: true })
+  .filter(entry => entry.isFile() && entry.name.endsWith('.md')
+    && !['README.md', 'DEPLOYMENT.md'].includes(entry.name))
+  .map(entry => entry.name.slice(0, -3))
+  .sort((a, b) => a.localeCompare(b, 'zh-CN', { numeric: true }))
+  .map(name => ({ text: name, link: `/${encodeURIComponent(name)}` }))
 
 export default defineConfig({
   lang: 'zh-CN',
@@ -14,25 +25,8 @@ export default defineConfig({
       { text: '面试实战', link: '/腾讯面试' }
     ],
     sidebar: [
-      { text: '开始阅读', items: [{ text: '内容导航', link: '/' }] },
-      { text: '前端基础', items: [
-        { text: 'CSS', link: '/css' },
-        { text: 'TypeScript', link: '/ts' },
-        { text: '网络与浏览器', link: '/网络资源' }
-      ] },
-      { text: '框架与应用', items: [
-        { text: 'Vue', link: '/vue' },
-        { text: 'React', link: '/react' },
-        { text: '小程序', link: '/小程序' }
-      ] },
-      { text: '面试实战', items: [
-        { text: '业务场景题', link: '/场景题' },
-        { text: '腾讯面试题', link: '/腾讯面试' }
-      ] },
-      { text: '开发工具', items: [
-        { text: 'AI 辅助开发', link: '/ai' },
-        { text: 'Codex 购买流程', link: '/codex购买流程' }
-      ] }
+      { text: '开始阅读', items: [{ text: 'README', link: '/' }] },
+      { text: '文章目录', items: articles }
     ],
     socialLinks: [{ icon: 'github', link: 'https://github.com/liyangting/interview-files' }],
     outline: { level: [2, 3], label: '本页目录' },
